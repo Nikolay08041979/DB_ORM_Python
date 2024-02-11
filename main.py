@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from models import create_tables, Shop, Stock, Sale, Book, Publisher
 
-pw = 'Liza-26052008'
+pw = '12345'
 lg = 'postgres'
 name_db = 'books_db'
 DSN = f'postgresql://{lg}:{pw}@localhost:5432/{name_db}'
