@@ -1,7 +1,5 @@
-import sqlalchemy
 import sqlalchemy as sq
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
-
 Base = declarative_base()
 
 
@@ -11,7 +9,7 @@ class Publisher(Base):
     name = sq.Column(sq.String(length=40), unique=True)
 
     def __str__(self):
-        return f'{self.id}: {self.name}'
+        return f'Publisher {self.id}: {self.name}'
 
 
 class Book(Base):
@@ -22,6 +20,8 @@ class Book(Base):
 
     publisher = relationship(Publisher, backref="book")
 
+    def __str__(self):
+        return f'Book {self.id}: ({self.title}, {self.id_publisher})'
 
 class Shop(Base):
     __tablename__ = "shop"
@@ -30,6 +30,8 @@ class Shop(Base):
 
     stock = relationship("Stock", backref="shop")
 
+    def __str__(self):
+        return f'{self.id}: ({self.name}'
 
 class Stock(Base):
     __tablename__ = "stock"
@@ -40,6 +42,8 @@ class Stock(Base):
 
     book = relationship(Book, backref="stock")
 
+    def __str__(self):
+        return f'Stock {self.id}: ({self.id_book}, {self.id_shop}, {self.count})'
 
 class Sale(Base):
     __tablename__ = "sale"
@@ -50,6 +54,9 @@ class Sale(Base):
     count = sq.Column(sq.Integer)
 
     stock = relationship(Stock, backref="sale")
+
+    def __str__(self):
+        return f'Sale {self.id}: ({self.price}, {self.date_sale}, {self.id_stock}, {self.count})'
 
 def create_tables(engine):
     # Base.metadata.drop_all(engine)
