@@ -4,7 +4,7 @@
 
 #### ✅ Составить модели классов SQLAlchemy 
 
-#### [Архитектура БД](https://github.com/Nikolay08041979/DB_ORM_Python/blob/master/books_db - public.gif)
+#### [архитектура_БД](https://github.com/Nikolay08041979/DB_ORM_Python/blob/master/books_db - public.gif)
 #### [models.py - структура БД](https://github.com/Nikolay08041979/DB_ORM_Python/blob/master/models.py)
 #### [create and fill tables.py - Заполнение данными](https://github.com/Nikolay08041979/DB_ORM_Python/blob/master/create_and_fill_tables.py)
 
