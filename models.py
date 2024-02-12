@@ -59,5 +59,5 @@ class Sale(Base):
         return f'Sale {self.id}: ({self.price}, {self.date_sale}, {self.id_stock}, {self.count})'
 
 def create_tables(engine):
-    # Base.metadata.drop_all(engine)
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
